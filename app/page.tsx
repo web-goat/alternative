@@ -1,8 +1,7 @@
-import {TrumpLiarOverlay} from "@/components/TrumpLiarOverlay";
-import {InstagramCTA} from "@/components/InstagramCTA";
-import {PosterGallery} from "@/components/PosterGallery";
-import {LandingSplash} from "@/components/LandingSplash";
-import {PoliticalBarometerSurvey} from "@/components/PoliticalBarometerSurvey";
+import { InstagramCTA } from "@/components/InstagramCTA";
+import { PosterGallery } from "@/components/PosterGallery";
+import { LandingSplash } from "@/components/LandingSplash";
+import { HomeClientLayer } from "@/components/HomeClientLayer";
 
 export default function Home() {
     return (
@@ -11,8 +10,7 @@ export default function Home() {
             <PosterGallery />
             <InstagramCTA />
 
-            <TrumpLiarOverlay />
-            <PoliticalBarometerSurvey />
+            <HomeClientLayer />
         </main>
     );
 }

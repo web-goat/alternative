@@ -17,74 +17,62 @@ type Question = {
 
 const QUESTIONS: Question[] = [
     {
-        text: "Sollten Menschen, die hier arbeiten, Steuern zahlen und Teil des Alltags sind, grundsätzlich bleiben dürfen?",
-        context: "Zum Beispiel Pflegekräfte, Handwerker, Paketfahrer oder Kolleginnen im Büro.",
+        text: "Fühlst du dich in Deutschland grundsätzlich sicher und willkommen?",
+        context: "Also nicht perfekt, aber im Alltag eher stabil als verloren.",
         yes: -1,
         no: 1,
     },
     {
-        text: "Wenn Krankenhäuser ohne ausländische Fachkräfte schlechter funktionieren würden: Sollte man Zuwanderung dann differenzierter betrachten?",
-        context: "Pflege, Medizin und Altenbetreuung hängen in vielen Regionen stark an Arbeitskräften mit Migrationsgeschichte.",
+        text: "Sollte Politik Menschen eher verbinden, statt Gruppen gegeneinander auszuspielen?",
+        context: "Klingt kitschig. Funktioniert aber besser als Dauerfeuer im Kommentarbereich.",
         yes: -1,
         no: 1,
     },
     {
-        text: "Sollte kriminelles Verhalten individuell bewertet werden, statt ganze Gruppen unter Generalverdacht zu stellen?",
-        context: "Also: Straftat ist Straftat — aber Herkunft ist nicht automatisch Schuld.",
+        text: "Wenn jemand hier arbeitet, Steuern zahlt und Teil des Alltags ist: Sollte Herkunft dann zweitrangig sein?",
+        context: "Zum Beispiel in Pflege, Handwerk, Gastro, IT oder Logistik.",
         yes: -1,
         no: 1,
     },
     {
-        text: "Ist dir wichtiger, wie sich ein Mensch verhält, als woher seine Familie ursprünglich kommt?",
-        context: "Klingt banal. Ist politisch aber offenbar Raketenwissenschaft.",
+        text: "Sollten Menschen individuell beurteilt werden, statt nach Herkunft, Namen oder Aussehen?",
+        context: "Radikale Idee: Menschen als Menschen betrachten.",
         yes: -1,
         no: 1,
     },
     {
-        text: "Sollte Deutschland gezielt Fachkräfte aus dem Ausland anwerben, wenn bestimmte Berufe sonst unbesetzt bleiben?",
-        context: "Zum Beispiel Pflege, IT, Handwerk, Logistik oder Gastronomie.",
+        text: "Wenn Krankenhäuser ohne ausländische Fachkräfte schlechter laufen würden: Sollte man Zuwanderung differenzierter sehen?",
+        context: "Pflege und Medizin sind nicht gerade Nebenquests.",
         yes: -1,
         no: 1,
     },
     {
         text: "Würdest du höhere Preise und längere Wartezeiten akzeptieren, wenn dadurch deutlich weniger Menschen einwandern?",
-        context: "Weniger Arbeitskräfte bedeutet oft: weniger Angebot, mehr Kosten, längere Wartezeiten.",
+        context: "Weniger Arbeitskräfte heißt oft: weniger Angebot, mehr Kosten.",
         yes: 1,
         no: -1,
     },
     {
-        text: "Sollte Integration eher über Sprache, Arbeit und Chancen funktionieren als über Ausgrenzung?",
-        context: "Menschen integrieren sich selten besser, wenn man ihnen permanent sagt, dass sie nicht dazugehören.",
+        text: "Sollte kriminelles Verhalten unabhängig von Herkunft gleich streng bewertet werden?",
+        context: "Straftat ist Straftat. Herkunft ist keine automatische Beweisführung.",
         yes: -1,
         no: 1,
     },
     {
-        text: "Sollte der Staat stärker gegen Rechtsextremismus vorgehen?",
-        context: "Demokratie ist kein Selbstläufer. Leider kein automatisches Windows-Update.",
+        text: "Findest du, viele politische Probleme werden zu einfach erklärt?",
+        context: "Wenn eine Lösung auf einen Bierdeckel passt, ist sie manchmal nur ein Bierdeckel.",
         yes: -1,
         no: 1,
     },
     {
-        text: "Sollten Menschen unabhängig von Herkunft, Religion oder Aussehen gleich respektvoll behandelt werden?",
-        context: "Wildes Konzept, nennt sich Menschenwürde.",
+        text: "Sollte Integration eher durch Sprache, Arbeit und Chancen gelingen als durch Ausgrenzung?",
+        context: "Menschen integrieren sich selten besser, wenn man ihnen permanent sagt, dass sie stören.",
         yes: -1,
         no: 1,
     },
     {
-        text: "Findest du, politische Probleme werden oft zu stark vereinfacht?",
-        context: "Zum Beispiel: 'Die da sind schuld' klingt einfach, löst aber meistens exakt gar nichts.",
-        yes: -1,
-        no: 1,
-    },
-    {
-        text: "Sollte man Sozialbetrug bekämpfen, ohne dabei alle Bedürftigen pauschal zu verdächtigen?",
-        context: "Kontrolle ja. Menschenverachtung eher so mittelgeil.",
-        yes: -1,
-        no: 1,
-    },
-    {
-        text: "Sollte Klimaschutz ernst genommen werden, auch wenn Maßnahmen manchmal unbequem sind?",
-        context: "Physik ist leider nicht beleidigt genug, um sich abwählen zu lassen.",
+        text: "Sollte der Staat Rechtsextremismus klar bekämpfen?",
+        context: "Demokratie ist kein Selbstläufer. Leider kein automatisches Update.",
         yes: -1,
         no: 1,
     },
@@ -95,14 +83,26 @@ const QUESTIONS: Question[] = [
         no: 1,
     },
     {
-        text: "Sollte demokratische Politik Kompromisse suchen, statt Gegner nur noch als Feinde zu behandeln?",
-        context: "Demokratie ist anstrengend. Genau deshalb ist sie besser als Gebrüll.",
+        text: "Sollte Klimaschutz ernst genommen werden, auch wenn Maßnahmen manchmal unbequem sind?",
+        context: "Physik diskutiert leider nicht auf Stammtischniveau.",
         yes: -1,
         no: 1,
     },
     {
-        text: "Würdest du sagen: Gute Politik erkennt Probleme an, ohne Menschengruppen dafür verantwortlich zu machen?",
-        context: "Probleme lösen > Sündenböcke sammeln.",
+        text: "Sollte Sozialbetrug bekämpft werden, ohne Bedürftige pauschal zu verdächtigen?",
+        context: "Kontrolle ja. Menschenverachtung eher nein.",
+        yes: -1,
+        no: 1,
+    },
+    {
+        text: "Ist dir wichtiger, welche Werte jemand lebt, als woher seine Familie ursprünglich kommt?",
+        context: "Anstand hat erstaunlicherweise keinen Reisepass.",
+        yes: -1,
+        no: 1,
+    },
+    {
+        text: "Sollte gute Politik Probleme lösen, ohne Sündenböcke zu sammeln?",
+        context: "Kompliziert, aber vermutlich gesünder als Dauerwut.",
         yes: -1,
         no: 1,
     },
@@ -110,16 +110,16 @@ const QUESTIONS: Question[] = [
 
 const RESULT_TEXTS = {
     left: {
-        title: "Eher links / progressiv",
-        text: "Du wirkst eher solidarisch, offen und lösungsorientiert. Kurz: vermutlich nicht der Albtraum jeder Kommentarspalte.",
+        title: "Eher offen / progressiv",
+        text: "Du wirkst eher solidarisch, differenziert und menschenorientiert. Also gefährlich nah an: Probleme lösen statt Menschen sortieren.",
     },
     center: {
         title: "Eher Mitte",
-        text: "Du wirkst gemischt: teils offen, teils vorsichtig. Also politisch ungefähr da, wo Familienfeiern noch nicht komplett eskalieren.",
+        text: "Du wirkst gemischt: offen, aber auch vorsichtig. Politisch ungefähr da, wo Familienfeiern noch knapp überleben.",
     },
     right: {
-        title: "Eher rechts / konservativ",
-        text: "Du wirkst eher ordnungs- und abgrenzungsorientiert. Vielleicht lohnt sich ein zweiter Blick auf die realen Folgen mancher Forderungen.",
+        title: "Eher konservativ / rechts",
+        text: "Du wirkst eher ordnungs- und abgrenzungsorientiert. Vielleicht lohnt sich ein zweiter Blick darauf, wen manche einfachen Antworten am Ende treffen.",
     },
 };
 
@@ -130,23 +130,28 @@ function getResult(score: number) {
 }
 
 function getPercent(score: number) {
-    const min = -15;
-    const max = 15;
-    return Math.min(100, Math.max(0, ((score - min) / (max - min)) * 100));
+    return Math.min(100, Math.max(0, ((score + 15) / 30) * 100));
 }
 
-export function PoliticalBarometerSurvey() {
-    const [open, setOpen] = useState(true);
+type PoliticalBarometerSurveyProps = {
+    enabled: boolean;
+};
+
+export function PoliticalBarometerSurvey({ enabled }: PoliticalBarometerSurveyProps) {
+    const [open, setOpen] = useState(enabled);
     const [step, setStep] = useState(0);
     const [answers, setAnswers] = useState<Answer[]>([]);
     const [saving, setSaving] = useState(false);
+
+    if (enabled && !open && answers.length === 0) {
+        setOpen(true);
+    }
 
     const finished = answers.length === QUESTIONS.length;
 
     const score = useMemo(() => {
         return answers.reduce((total, answer, index) => {
             const question = QUESTIONS[index];
-            if (!question) return total;
             if (answer === "yes") return total + question.yes;
             if (answer === "no") return total + question.no;
             return total;
@@ -156,7 +161,6 @@ export function PoliticalBarometerSurvey() {
     const resultKey = getResult(score);
     const result = RESULT_TEXTS[resultKey];
     const percent = getPercent(score);
-
     const currentQuestion = QUESTIONS[step];
 
     const answerQuestion = async (answer: Answer) => {
@@ -194,17 +198,20 @@ export function PoliticalBarometerSurvey() {
     const restart = () => {
         setStep(0);
         setAnswers([]);
+        setOpen(true);
     };
+
+    if (!enabled) return null;
 
     if (!open) {
         return (
             <button
                 type="button"
                 onClick={() => setOpen(true)}
-                className="fixed bottom-5 left-5 z-50 inline-flex items-center gap-2 rounded-full bg-[#FFD500] px-4 py-3 text-sm font-black uppercase text-[#003B70] shadow-2xl"
+                className="fixed bottom-5 left-5 z-[9999] inline-flex items-center gap-2 rounded-full bg-[#FFD500] px-4 py-3 text-sm font-black uppercase text-[#003B70] shadow-2xl"
             >
                 <BarChart3 size={18} />
-                Barometer
+                Umfrage
             </button>
         );
     }
@@ -226,17 +233,17 @@ export function PoliticalBarometerSurvey() {
                     <div className="flex items-center justify-between bg-[#E30613] px-5 py-4">
                         <div>
                             <p className="text-xs font-black uppercase tracking-[0.25em] text-[#FFD500]">
-                                politisches Bauchgefühl
+                                kurzer Realitätsabgleich
                             </p>
                             <h2 className="text-2xl font-black uppercase leading-none">
-                                Mini-Barometer
+                                Wie fühlst du dich in Deutschland?
                             </h2>
                         </div>
 
                         <button
                             type="button"
                             onClick={() => setOpen(false)}
-                            className="rounded-full bg-white/15 p-2 text-white transition hover:bg-white/25"
+                            className="rounded-full bg-white/15 p-2 text-white"
                             aria-label="Umfrage schließen"
                         >
                             <X size={22} />
@@ -246,7 +253,7 @@ export function PoliticalBarometerSurvey() {
                     {!finished ? (
                         <div className="p-5 sm:p-7">
                             <div className="mb-6">
-                                <div className="mb-2 flex items-center justify-between text-xs font-black uppercase text-white/70">
+                                <div className="mb-2 flex justify-between text-xs font-black uppercase text-white/70">
                   <span>
                     Frage {step + 1} / {QUESTIONS.length}
                   </span>
@@ -256,9 +263,7 @@ export function PoliticalBarometerSurvey() {
                                 <div className="h-3 overflow-hidden rounded-full bg-white/20">
                                     <div
                                         className="h-full rounded-full bg-[#FFD500] transition-all"
-                                        style={{
-                                            width: `${((step + 1) / QUESTIONS.length) * 100}%`,
-                                        }}
+                                        style={{ width: `${((step + 1) / QUESTIONS.length) * 100}%` }}
                                     />
                                 </div>
                             </div>
@@ -272,27 +277,15 @@ export function PoliticalBarometerSurvey() {
                             </p>
 
                             <div className="mt-7 grid gap-3">
-                                <button
-                                    type="button"
-                                    onClick={() => answerQuestion("yes")}
-                                    className="rounded-2xl bg-[#FFD500] px-5 py-4 text-left text-lg font-black uppercase text-[#003B70] shadow-xl transition active:scale-[0.98]"
-                                >
+                                <button onClick={() => answerQuestion("yes")} className="rounded-2xl bg-[#FFD500] px-5 py-4 text-left text-lg font-black uppercase text-[#003B70]">
                                     Ja
                                 </button>
 
-                                <button
-                                    type="button"
-                                    onClick={() => answerQuestion("no")}
-                                    className="rounded-2xl bg-white px-5 py-4 text-left text-lg font-black uppercase text-[#003B70] shadow-xl transition active:scale-[0.98]"
-                                >
+                                <button onClick={() => answerQuestion("no")} className="rounded-2xl bg-white px-5 py-4 text-left text-lg font-black uppercase text-[#003B70]">
                                     Nein
                                 </button>
 
-                                <button
-                                    type="button"
-                                    onClick={() => answerQuestion("unsure")}
-                                    className="rounded-2xl border-2 border-white/30 bg-white/10 px-5 py-4 text-left text-lg font-black uppercase text-white transition active:scale-[0.98]"
-                                >
+                                <button onClick={() => answerQuestion("unsure")} className="rounded-2xl border-2 border-white/30 bg-white/10 px-5 py-4 text-left text-lg font-black uppercase text-white">
                                     Weiß nicht
                                 </button>
                             </div>
@@ -300,7 +293,7 @@ export function PoliticalBarometerSurvey() {
                     ) : (
                         <div className="p-5 sm:p-7">
                             <p className="text-xs font-black uppercase tracking-[0.25em] text-[#FFD500]">
-                                Ergebnis
+                                Dein Barometer
                             </p>
 
                             <h3 className="mt-3 text-4xl font-black uppercase leading-none">
@@ -313,7 +306,7 @@ export function PoliticalBarometerSurvey() {
 
                             <div className="mt-8 rounded-3xl bg-white p-5 text-[#003B70]">
                                 <div className="mb-3 flex justify-between text-xs font-black uppercase">
-                                    <span>Links</span>
+                                    <span>Offen</span>
                                     <span>Mitte</span>
                                     <span>Rechts</span>
                                 </div>
@@ -325,27 +318,15 @@ export function PoliticalBarometerSurvey() {
                                         className="absolute top-1/2 h-9 w-9 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white bg-[#003B70] shadow-xl"
                                     />
                                 </div>
-
-                                <p className="mt-5 text-center text-sm font-black uppercase">
-                                    Score: {score}
-                                </p>
                             </div>
 
                             <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                                <button
-                                    type="button"
-                                    onClick={restart}
-                                    className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-5 py-4 font-black uppercase text-[#003B70]"
-                                >
+                                <button onClick={restart} className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-5 py-4 font-black uppercase text-[#003B70]">
                                     <RotateCcw size={20} />
                                     Nochmal
                                 </button>
 
-                                <button
-                                    type="button"
-                                    onClick={() => setOpen(false)}
-                                    className="rounded-2xl bg-[#FFD500] px-5 py-4 font-black uppercase text-[#003B70]"
-                                >
+                                <button onClick={() => setOpen(false)} className="rounded-2xl bg-[#FFD500] px-5 py-4 font-black uppercase text-[#003B70]">
                                     {saving ? "Speichert..." : "Schließen"}
                                 </button>
                             </div>

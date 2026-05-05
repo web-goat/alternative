@@ -17,6 +17,7 @@ pnpm-debug.log*
 # env files
 .env*
 !.env.example
+lib/firebase.ts
 
 # firebase
 .firebase/
