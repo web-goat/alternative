@@ -1,5 +1,3 @@
-// components/InstagramCTA.tsx
-
 import {ExternalLink} from "lucide-react";
 
 export function InstagramCTA() {

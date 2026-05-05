@@ -13,7 +13,6 @@ import { AlertTriangle, MousePointerClick } from "lucide-react";
 import { db } from "@/lib/firebase";
 
 const STORAGE_KEY = "trump-liar-voted";
-const counterRef = doc(db, "counters", "trump-liar");
 
 type TrumpLiarCounterProps = {
     compact?: boolean;
@@ -22,25 +21,25 @@ type TrumpLiarCounterProps = {
 export function TrumpLiarCounter({ compact = false }: TrumpLiarCounterProps) {
     const [count, setCount] = useState(0);
     const [hasVoted, setHasVoted] = useState(false);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const [voting, setVoting] = useState(false);
     const [errorText, setErrorText] = useState("");
 
     useEffect(() => {
         setHasVoted(localStorage.getItem(STORAGE_KEY) === "true");
 
+        const counterRef = doc(db, "counters", "trump-liar");
+
         const unsubscribe = onSnapshot(
             counterRef,
             (snapshot) => {
-                if (!snapshot.exists()) {
-                    setCount(0);
-                    return;
-                }
-
-                setCount(snapshot.data().count ?? 0);
+                setCount(snapshot.exists() ? snapshot.data().count ?? 0 : 0);
+                setLoading(false);
             },
             (error) => {
                 console.error("Firestore snapshot error:", error);
                 setErrorText("Counter konnte nicht geladen werden.");
+                setLoading(false);
             }
         );
 
@@ -48,12 +47,14 @@ export function TrumpLiarCounter({ compact = false }: TrumpLiarCounterProps) {
     }, []);
 
     const handleVote = async () => {
-        if (hasVoted || loading) return;
+        if (hasVoted || voting) return;
 
-        setLoading(true);
+        setVoting(true);
         setErrorText("");
 
         try {
+            const counterRef = doc(db, "counters", "trump-liar");
+
             await setDoc(
                 counterRef,
                 {
@@ -67,9 +68,9 @@ export function TrumpLiarCounter({ compact = false }: TrumpLiarCounterProps) {
             setHasVoted(true);
         } catch (error) {
             console.error("Vote failed:", error);
-            setErrorText("Klick wurde von Firebase geblockt. Sehr demokratisch.");
+            setErrorText("Firebase hat den Klick geblockt. Demokratie.exe angehalten.");
         } finally {
-            setLoading(false);
+            setVoting(false);
         }
     };
 
@@ -119,7 +120,7 @@ export function TrumpLiarCounter({ compact = false }: TrumpLiarCounterProps) {
                         </p>
 
                         <p className="mt-2 text-6xl font-black sm:text-8xl">
-                            {count.toLocaleString("de-DE")}
+                            {loading ? "…" : count.toLocaleString("de-DE")}
                         </p>
 
                         <p className="mt-2 font-bold uppercase text-[#E30613]">
@@ -130,11 +131,11 @@ export function TrumpLiarCounter({ compact = false }: TrumpLiarCounterProps) {
                     <button
                         type="button"
                         onClick={handleVote}
-                        disabled={hasVoted || loading}
-                        className="inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-[#FFD500] px-6 py-5 text-lg font-black uppercase text-[#003B70] shadow-xl transition active:scale-95 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+                        disabled={hasVoted || voting || loading}
+                        className="inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-[#FFD500] px-6 py-5 text-lg font-black uppercase text-[#003B70] shadow-xl transition hover:scale-[1.02] active:scale-95 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
                     >
                         <MousePointerClick size={22} />
-                        {hasVoted ? "Du hast abgestimmt" : loading ? "Zähle..." : "Ja, natürlich"}
+                        {hasVoted ? "Du hast abgestimmt" : voting ? "Zähle..." : "Ja, natürlich"}
                     </button>
 
                     {errorText && (
